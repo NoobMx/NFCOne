@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NFCOne.MainPage">
+
+    <StackLayout>
+        <Image Source="https://play-lh.googleusercontent.com/4kxHjDR4qOsolrqcE72xPxC_wEL845F1D3F8xpLVu87UJzq7OrH7VvMxMl9GjceMADo"
+               Aspect="AspectFit"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+        <Label Text="Ingresa tu TAG para iniciar sesion" FontAttributes="Bold"/>
+    </StackLayout>
+
+</ContentPage>
