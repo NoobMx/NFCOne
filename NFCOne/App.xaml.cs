@@ -10,7 +10,10 @@ namespace NFCOne
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // Configura la página raíz como una NavigationPage y establece MainPage
+            MainPage = new NavigationPage(new MainPage());
+
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()

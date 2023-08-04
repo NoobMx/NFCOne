@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.OS;
 using Android.Nfc;
 using Android.Content;
+using Xamarin.Forms;
 
 namespace NFCOne.Droid
 {
@@ -38,6 +39,18 @@ namespace NFCOne.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
+        // Método para convertir el ID de la tarjeta NFC (byte array) a una cadena hexadecimal
+        private string ByteArrayToHexString(byte[] byteArray)
+        {
+            if (byteArray == null)
+                return null;
+
+            string hex = BitConverter.ToString(byteArray);
+            return hex.Replace("-", "");
+        }
+
+        //
+
         protected override void OnResume()
         {
             base.OnResume();
@@ -69,9 +82,6 @@ namespace NFCOne.Droid
                 // Obtener la etiqueta NFC
                 var tag = (Tag)intent.GetParcelableExtra(NfcAdapter.ExtraTag);
 
-
-
-
                 if (tag != null)
                 {
                     // Obtener la ID de la etiqueta NFC en bytes
@@ -80,8 +90,11 @@ namespace NFCOne.Droid
                     // Convertir la ID en un string hexadecimal
                     string tagIdHex = BitConverter.ToString(tagId).Replace("-", "");
 
+                    // Enviar el ID de la tarjeta NFC a través de MessagingCenter
+                    MessagingCenter.Send<App, string>((App)Xamarin.Forms.Application.Current, "NFCDetectado", tagIdHex);
+
                     // Mostrar la ID de la etiqueta NFC en un cuadro de diálogo de alerta
-                    mostrarAlertaTag(tagIdHex);
+                    //mostrarAlertaTag(tagIdHex);
                 }
             }
         }
