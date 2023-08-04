@@ -38,15 +38,22 @@ namespace NFCOne
 
                     if (recibirjson == null)
                     {
+                        // Mostrar alerta si el nombre del usuario es nulo o no se encontró el usuario
+                        DisplayAlert("Acceso denegado", "No se cuenta con un resgistro en la BD", "Aceptar");
+
                         lblUsuario.Text = "No existe";
                         Navigation.PushAsync(new Page1(tagIdHex));
                     }
                     else
                     {
                         Usuario usuario = JsonConvert.DeserializeObject<Usuario>(recibirjson);
-                        int id = usuario.ID;
-                        string numeroTarjeta = usuario.NumeroTarjeta;
-                        lblUsuario.Text= usuario.NombreCompleto;
+
+                        Page2 page2 = new Page2(usuario.ID, usuario.NombreCompleto, usuario.NumeroTarjeta);
+                        Navigation.PushAsync(page2);
+
+                        //int id = usuario.ID;
+                        //string numeroTarjeta = usuario.NumeroTarjeta;
+                        //lblUsuario.Text= usuario.NombreCompleto;
                     }
 
 
@@ -66,9 +73,6 @@ namespace NFCOne
         //    });
         //}
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-           // await Navigation.PushAsync(new Page1());
-        }
+        
     }
 }

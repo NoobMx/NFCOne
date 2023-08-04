@@ -18,12 +18,15 @@
 
   <ItemGroup>
     <Reference Include="HTTPupt">
-      <HintPath>..\..\..\..\Downloads\Nueva carpeta\HTTPupt.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\HTTPupt.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Page1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Page2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

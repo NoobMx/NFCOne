@@ -4,14 +4,6 @@
              x:Class="NFCOne.MainPage">
 
     <StackLayout>
-        <Button x:Name="btnRegistrar"
-                Text="Registrar" 
-                BorderWidth="1" 
-                Font="Large" 
-                HorizontalOptions="Center" 
-                VerticalOptions="CenterAndExpand" 
-                Clicked="Button_Clicked"/>
-
         <Label x:Name="lblTagEnunciado"
                Text="La ID de tu TAG es: "
                FontAttributes="Bold" />

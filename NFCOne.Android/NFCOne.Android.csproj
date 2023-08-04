@@ -87,9 +87,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\NFCOne\NFCOne.csproj">
       <Project>{847AFC31-F91C-4D4B-9CB0-0106BCE2164F}</Project>
@@ -98,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\NFClogo.jpg" />
+    <AndroidResource Include="Resources\drawable\accesoCorrecto.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
