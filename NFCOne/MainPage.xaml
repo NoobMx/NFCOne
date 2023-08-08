@@ -9,7 +9,7 @@
                FontAttributes="Bold" />
 
         <Label x:Name="lblTagIdHex"
-               Text="Esperando detección del NFC..."
+               Text="Esperando detección del NFC...."
                FontAttributes="Bold"
                TextColor="Red"/>
         <Label x:Name="lblUsuario" />
