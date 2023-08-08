@@ -4,14 +4,6 @@
              x:Class="NFCOne.MainPage">
 
     <StackLayout>
-        <Button x:Name="btnRegistrar"
-                Text="Registrar" 
-                BorderWidth="1" 
-                Font="Large" 
-                HorizontalOptions="Center" 
-                VerticalOptions="CenterAndExpand" 
-                Clicked="Button_Clicked"/>
-
         <Label x:Name="lblTagEnunciado"
                Text="La ID de tu TAG es: "
                FontAttributes="Bold" />
@@ -19,12 +11,8 @@
         <Label x:Name="lblTagIdHex"
                Text="Esperando detección del NFC..."
                FontAttributes="Bold"
-               TextColor="Red" />
-
+               TextColor="Red"/>
         <Label x:Name="lblUsuario" />
-
-
-
         <Image x:Name="imgNFC"
                Source="https://play-lh.googleusercontent.com/4kxHjDR4qOsolrqcE72xPxC_wEL845F1D3F8xpLVu87UJzq7OrH7VvMxMl9GjceMADo"
                Aspect="AspectFit"

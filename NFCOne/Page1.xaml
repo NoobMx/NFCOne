@@ -9,7 +9,6 @@
                    FontAttributes="Bold" />
 
             <Label x:Name="lblTagIdHexII"
-                   
                    FontAttributes="Bold"
                    TextColor="Red" />
 

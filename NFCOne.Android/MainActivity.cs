@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace NFCOne.Droid
 {
-    [Activity(Label = "NFCOne", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "NFCOne", Icon = "@mipmap/ic_nfc", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     [IntentFilter(new[] { NfcAdapter.ActionTagDiscovered }, Categories = new[] { Intent.CategoryDefault})]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -39,17 +39,7 @@ namespace NFCOne.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        // Método para convertir el ID de la tarjeta NFC (byte array) a una cadena hexadecimal
-        private string ByteArrayToHexString(byte[] byteArray)
-        {
-            if (byteArray == null)
-                return null;
-
-            string hex = BitConverter.ToString(byteArray);
-            return hex.Replace("-", "");
-        }
-
-        //
+                //
 
         protected override void OnResume()
         {

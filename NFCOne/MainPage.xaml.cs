@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,57 +19,42 @@ namespace NFCOne
         {
             InitializeComponent();
 
-            // Suscribirse al evento NFCDetected
+            // Suscribirse al evento NFCDetectado
             MessagingCenter.Subscribe<App, string>(this, "NFCDetectado", (sender, tagIdHex) =>
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     lblTagIdHex.Text = tagIdHex;
 
-                    //Usuario usuario = new Usuario
-                    //{
-                    //    NumeroTarjeta = lblTagIdHex.Text,
-                        
-                    //};
+                    // Verificar la conexión a Internet
+                    bool tieneConexionInternet = Connectivity.NetworkAccess == NetworkAccess.Internet;
 
-
-                    
-                    peticion.PedirComunicacion("Usuario/obtener/"+ tagIdHex, MetodoHTTP.GET, TipoContenido.JSON);
-                    String recibirjson = peticion.ObtenerJson();
-
-                    if (recibirjson == null)
+                    if (!tieneConexionInternet)
                     {
-                        lblUsuario.Text = "No existe";
-                        Navigation.PushAsync(new Page1(tagIdHex));
+                        lblTagIdHex.Text = "Conéctate a una red para obtener los datos";
                     }
                     else
                     {
-                        Usuario usuario = JsonConvert.DeserializeObject<Usuario>(recibirjson);
-                        int id = usuario.ID;
-                        string numeroTarjeta = usuario.NumeroTarjeta;
-                        lblUsuario.Text= usuario.NombreCompleto;
-                    }
+                        peticion.PedirComunicacion("Usuario/obtener/" + tagIdHex, MetodoHTTP.GET, TipoContenido.JSON);
+                        String recibirjson = peticion.ObtenerJson();
 
+                        if (recibirjson == null)
+                        {
+                            lblUsuario.Text = "No existe";
+                            Navigation.PushAsync(new Page1(tagIdHex));
+                        }
+                        else
+                        {
+                            Usuario usuario = JsonConvert.DeserializeObject<Usuario>(recibirjson);
+                            int id = usuario.ID;
+                            string numeroTarjeta = usuario.NumeroTarjeta;
+                            string nombreColpleto = usuario.NombreCompleto;
+                            Navigation.PushAsync(new Page2(id, numeroTarjeta, nombreColpleto));
+                        }
+                    }
 
                 });
             });
-        }
-
-        
-
-        
-
-        //private void OnNFCDetected(App sender, string nfcId)
-        //{
-        //    Device.BeginInvokeOnMainThread(() =>
-        //    {
-        //        lblTagIdHex.Text = "La ID de tu TAG es: " + nfcId;
-        //    });
-        //}
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-           // await Navigation.PushAsync(new Page1());
         }
     }
 }
