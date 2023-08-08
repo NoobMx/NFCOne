@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFCOne.Android", "NFCOne.Android\NFCOne.Android.csproj", "{8428D90C-4950-4624-8DB8-26FE23343DFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFCOne", "NFCOne\NFCOne.csproj", "{AC800D74-43B1-4FC8-9FB7-233BEDB60775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFCOne", "NFCOne\NFCOne.csproj", "{AC800D74-43B1-4FC8-9FB7-233BEDB60775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
