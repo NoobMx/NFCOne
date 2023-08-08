@@ -33,8 +33,20 @@ namespace NFCOne
        
         private async void btnEviarRegistro_Clicked(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             String nombreCompleto = txtNombre.Text;
             
+=======
+            string nombre = txtNombre.Text;
+
+            if (string.IsNullOrEmpty(nombre))
+            {
+                // Mostrar una alerta o mensaje indicando que el campo está vacío
+                DisplayAlert("Campo Vacío...", "Debe ingresar un nombre.", "Aceptar");
+            }
+            else
+            {
+>>>>>>> 3bfcfc683aa7bb7bc16fc1182028b53730a35cf9
                 Usuario usuario = new Usuario
                 {
                     NumeroTarjeta = datoNfcPublic,
@@ -50,6 +62,7 @@ namespace NFCOne
                                 String enviarJson = JsonConvertidor.Objeto_Json(usuario);
                 peticion.PedirComunicacion("Usuario/agregar", MetodoHTTP.POST, TipoContenido.JSON);
                 peticion.enviarDatos(enviarJson);
+<<<<<<< HEAD
                 //String recibirjson = peticion.ObtenerJson();
                 string recibirjson = await Task.Run(() => peticion.ObtenerJson());
                 if (!string.IsNullOrEmpty(recibirjson))
@@ -64,6 +77,12 @@ namespace NFCOne
 
                
             }
+=======
+
+
+                String recibirjson = peticion.ObtenerJson();
+            }      
+>>>>>>> 3bfcfc683aa7bb7bc16fc1182028b53730a35cf9
         }
 
 
