@@ -47,7 +47,7 @@ namespace NFCOne
             }
             else
             {
-                                String enviarJson = JsonConvertidor.Objeto_Json(usuario);
+                String enviarJson = JsonConvertidor.Objeto_Json(usuario);
                 peticion.PedirComunicacion("Usuario/agregar", MetodoHTTP.POST, TipoContenido.JSON);
                 peticion.enviarDatos(enviarJson);
                 //String recibirjson = peticion.ObtenerJson();
@@ -55,6 +55,8 @@ namespace NFCOne
                 if (!string.IsNullOrEmpty(recibirjson))
                 {
                     await DisplayAlert("Éxito", "El formulario se ha enviado correctamente", "OK");
+                    //Application.Current.MainPage = new MainPage();
+                    await Navigation.PushAsync(new MainPage());
                 }
                 else
                 {
