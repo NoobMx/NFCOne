@@ -40,7 +40,7 @@ namespace NFCOne
 
                         if (recibirjson == null)
                         {
-                            lblUsuario.Text = "No existe";
+                            lblExistencia.Text = "No existe";
                             Navigation.PushAsync(new Page1(tagIdHex));
                         }
                         else

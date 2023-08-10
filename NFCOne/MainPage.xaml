@@ -3,25 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NFCOne.MainPage">
 
-    <StackLayout>
-        <Label x:Name="lblTagEnunciado"
-               Text="La ID de tu TAG es: "
-               FontAttributes="Bold" />
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <!--Se concluye la vista principal de la APP-->
 
-        <Label x:Name="lblTagIdHex"
-               Text="Esperando detección del NFC...."
+        <Grid.RowDefinitions>
+            <!--Fila correspondiente a el fondo de pantalla-->
+            <RowDefinition Height="*" />
+            <!--Fila correspondiente a el saludo-->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image x:Name="imgFondo"
+               Source="pxfuel"
+               Grid.Row="0"
+               Aspect="AspectFill" />
+
+        <Label x:Name="lblIndicadorTAG"
+               Text="Ingresa tu NFC para iniciar sesion"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"
+               BackgroundColor="Orange"
                FontAttributes="Bold"
-               TextColor="Red"/>
-        <Label x:Name="lblUsuario" />
-        <Image x:Name="imgNFC"
-               Source="https://play-lh.googleusercontent.com/4kxHjDR4qOsolrqcE72xPxC_wEL845F1D3F8xpLVu87UJzq7OrH7VvMxMl9GjceMADo"
-               Aspect="AspectFit"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-        
-        <Label x:Name="lblIndicadorTAG" 
-               Text="Ingresa tu TAG para iniciar sesion" 
-               FontAttributes="Bold"/>
-    </StackLayout>
+               Grid.Row="1" />
 
+        <Label x:Name="lblExistencia"
+               HorizontalOptions="Center"
+               FontSize="Title"
+               FontAttributes="Bold"
+               TextColor="Black" />
+
+        <StackLayout Padding="20">
+            <Label x:Name="lblTagEnunciado"
+                   Text="La ID de tu NFC es: "
+                   TextColor="AliceBlue"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="lblTagIdHex"
+                   Text="Esperando detección del NFC...."
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Title" />
+
+            <Image x:Name="imgNFC"
+                   Source="sensorRojo"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

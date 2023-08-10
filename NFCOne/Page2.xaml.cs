@@ -19,9 +19,10 @@ namespace NFCOne
 
             //MAIN PAGE
             // Lógica para inicializar la página y mostrar los datos
-            lblID.Text = "ID: " + ID.ToString();
-            lblnombreCompleto.Text = "Nonbre: " + NombreCompleto;
-            lblIdTag.Text = "Tag: " + NumeroTarjeta;
+            lblID.Text = "La ID de tu Registro es : " + ID.ToString();
+            lblnombreCompleto.Text = "Nombre: " + NombreCompleto;
+            lblIdTag.Text = NumeroTarjeta;
+            lblSaludo.Text= "Bienvenido: " + NombreCompleto;
         }
     }
 }

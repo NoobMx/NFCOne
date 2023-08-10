@@ -3,10 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NFCOne.Page2">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="lblID" />
-            <Label x:Name="lblnombreCompleto" />
-            <Label x:Name="lblIdTag" />
-        </StackLayout>
+        <!--Vista de datos del USUARIO-->
+        <Grid RowSpacing="0" ColumnSpacing="0">
+
+            <Grid.RowDefinitions>
+                <!--Fila correspondiente a el fondo de pantalla-->
+                <RowDefinition Height="*" />
+                <!--Fila correspondiente a el saludo-->
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="imgFondo"
+                   Source="pxfuel"
+                   Grid.Row="0"
+                   Aspect="AspectFill" />
+
+            <Label x:Name="lblSaludo"
+                   Text="Bienvenido : USER"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Title"
+                   BackgroundColor="Orange"
+                   Grid.Row="1" />
+
+            <StackLayout Padding="20">
+
+                <Label x:Name="lblTagEnunciado"
+                       Text="La ID de tu NFC es: "
+                       TextColor="AliceBlue"
+                       FontAttributes="Bold"
+                       FontSize="Title"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <Label x:Name="lblIdTag"
+                       FontAttributes="Bold"
+                       TextColor="Green"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="Title" />
+                <Label x:Name="lblnombreCompleto"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       BackgroundColor="DarkOliveGreen" />
+
+                <Image x:Name="imgCorrecto"
+                       Source="aceptar"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand" />
+
+                <Label x:Name="lblID"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Center"
+                       BackgroundColor="Red" />
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

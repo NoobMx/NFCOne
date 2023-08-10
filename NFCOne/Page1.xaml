@@ -4,21 +4,57 @@
              x:Class="NFCOne.Page1">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblTagEnunciadoII"
-                   Text="La ID de tu TAG es: "
-                   FontAttributes="Bold" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-            <Label x:Name="lblTagIdHexII"
-                   FontAttributes="Bold"
-                   TextColor="Red" />
+                <Image x:Name="imgFondo"
+                       Source="pxfuel"
+                       Grid.Row="0"
+                       Aspect="AspectFill" />
 
-            <Entry x:Name="txtNombre" Placeholder="Ingrese su nombre"/>
+                <StackLayout Padding="20">
 
-            <Button x:Name="btnEviarRegistro"
-                    Text="Registrar" 
-                    BorderWidth="1"
-                    HorizontalOptions="Center"
-                    Clicked="btnEviarRegistro_Clicked"/>
+                    <Frame BackgroundColor="Transparent"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Label x:Name="lblTagEnunciadoII"
+                                   FontSize="Title"
+                                   HorizontalTextAlignment="Center"
+                                   Text="La ID de tu NFC es: "
+                                   BackgroundColor="Red" />
+
+                            <Label x:Name="lblTagIdHexII"
+                                   FontSize="Title"
+                                   HorizontalTextAlignment="Center"
+                                   BackgroundColor="Red" />
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Frame CornerRadius="20"
+                               BorderColor="Black"
+                               BackgroundColor="Transparent">
+                            <Entry x:Name="txtNombre"
+                                   Placeholder="Nombre Completo"
+                                   PlaceholderColor="White"
+                                   MaxLength="40"
+                                   CharacterSpacing="2" />
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Button x:Name="btnEviarRegistro"
+                                Clicked="btnEviarRegistro_Clicked"
+                                Style="{StaticResource MyButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                                Text="Enviar" />
+
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
