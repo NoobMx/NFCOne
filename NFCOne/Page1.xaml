@@ -2,6 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NFCOne.Page1">
+    <ContentPage.Resources>
+        <!--Vista de Agregar Usuario-->
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor"
+                    Value="Transparent" />
+            <Setter Property="TextColor"
+                    Value="#333333" />
+            <Setter Property="FontSize"
+                    Value="16" />
+            <Setter Property="TextColor"
+                    Value="White"/>
+            <Setter Property="PlaceholderColor"
+                    Value="White"/>
+        </Style>
+
+        <!--Estilo botón-->
+        <Style TargetType="Button"
+               x:Key="MyButtonStyle">
+            <Setter Property="BackgroundColor"
+                    Value="OrangeRed" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="CornerRadius"
+                    Value="5" />
+            <Setter Property="FontSize"
+                    Value="18" />
+            <Setter Property="Padding"
+                    Value="10" />
+            <Setter Property="HorizontalOptions"
+                    Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions"
+                    Value="CenterAndExpand" />
+        </Style>
+
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -17,28 +53,37 @@
                 <StackLayout Padding="20">
 
                     <Frame BackgroundColor="Transparent"
-                           BorderColor="Black">
+                           BorderColor="Honeydew"
+                           CornerRadius="60">
                         <StackLayout>
-                            <Label x:Name="lblTagEnunciadoII"
-                                   FontSize="Title"
-                                   HorizontalTextAlignment="Center"
-                                   Text="La ID de tu NFC es: "
-                                   BackgroundColor="Red" />
+                            <Label x:Name="lblTagEnunciado"
+                               Text="La ID de tu NFC es: "
+                               TextColor="AliceBlue"
+                               FontAttributes="Bold"
+                               FontSize="Title"
+                               HorizontalOptions="CenterAndExpand" />
 
                             <Label x:Name="lblTagIdHexII"
-                                   FontSize="Title"
-                                   HorizontalTextAlignment="Center"
-                                   BackgroundColor="Red" />
+                               HorizontalOptions="Center"
+                               FontSize="Title"
+                               FontAttributes="Bold"
+                               TextColor="darkred" />
                         </StackLayout>
                     </Frame>
 
                     <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label x:Name="lblIngresaUsuario" 
+                               Text="Ingresa tu nombre: "
+                               TextColor="Black"
+                               FontAttributes="Bold"/>
+                        
                         <Frame CornerRadius="20"
-                               BorderColor="Black"
+                               BorderColor="Honeydew"
                                BackgroundColor="Transparent">
+
                             <Entry x:Name="txtNombre"
                                    Placeholder="Nombre Completo"
-                                   PlaceholderColor="White"
+                                   
                                    MaxLength="40"
                                    CharacterSpacing="2" />
                         </Frame>

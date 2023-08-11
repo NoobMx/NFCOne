@@ -91,7 +91,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\aceptar.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NFCOne\NFCOne.csproj">
       <Project>{847AFC31-F91C-4D4B-9CB0-0106BCE2164F}</Project>

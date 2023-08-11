@@ -26,11 +26,6 @@
                FontAttributes="Bold"
                Grid.Row="1" />
 
-        <Label x:Name="lblExistencia"
-               HorizontalOptions="Center"
-               FontSize="Title"
-               FontAttributes="Bold"
-               TextColor="Black" />
 
         <StackLayout Padding="20">
             <Label x:Name="lblTagEnunciado"
@@ -39,6 +34,12 @@
                    FontAttributes="Bold"
                    FontSize="Title"
                    HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="lblExistencia"
+               HorizontalOptions="Center"
+               FontSize="Title"
+               FontAttributes="Bold"
+               TextColor="Black" />
 
             <Label x:Name="lblTagIdHex"
                    Text="Esperando detección del NFC...."
